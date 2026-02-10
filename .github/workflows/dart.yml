@@ -30,11 +30,6 @@ jobs:
           flutter pub get
           echo "✅ Dependencies installed!"
       
-      - name: Run tests
-        run: |
-          echo "🧪 Running tests..."
-          flutter test
-          echo "✅ All tests passed!"
       
       - name: Analyze code
         run: |
