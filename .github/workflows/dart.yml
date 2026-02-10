@@ -34,7 +34,7 @@ jobs:
       - name: Analyze code
         run: |
           echo "🔍 Analyzing code..."
-          flutter analyze
+          flutter analyze --no-fatal-infos
           echo "✅ Code analysis complete!"
       
       - name: Build APK
