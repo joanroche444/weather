@@ -43,4 +43,10 @@ jobs:
           flutter build apk --release
           echo "✅ APK built successfully!"
           ls -lh build/app/outputs/flutter-apk/
+
+      - name: Upload APK as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
       
