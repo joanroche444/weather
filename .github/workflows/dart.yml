@@ -20,28 +20,25 @@ jobs:
       
       - name: Print Flutter version
         run: |
-          echo "🚀 Starting Flutter build..."
           flutter --version
           echo "Flutter setup complete!"
       
       - name: Install dependencies
         run: |
-          echo "📦 Installing dependencies..."
           flutter pub get
-          echo "✅ Dependencies installed!"
+          echo "Dependencies installed"
       
       
       - name: Analyze code
         run: |
-          echo "🔍 Analyzing code..."
           flutter analyze --no-fatal-infos
-          echo "✅ Code analysis complete!"
+          echo "Code analysis complete"
       
       - name: Build APK
         run: |
-          echo "🏗️ Building APK..."
+          echo " Building."
           flutter build apk --release
-          echo "✅ APK built successfully!"
+          echo "APK built successfully!"
           ls -lh build/app/outputs/flutter-apk/
 
       - name: Upload APK as artifact
