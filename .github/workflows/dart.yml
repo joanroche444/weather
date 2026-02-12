@@ -1,0 +1,49 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Flutter CI
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      
+      - name: Print Flutter version
+        run: |
+          flutter --version
+          echo "Flutter setup complete!"
+      
+      - name: Install dependencies
+        run: |
+          flutter pub get
+          echo "Dependencies installed"
+      
+      
+      - name: Analyze code
+        run: |
+          flutter analyze --no-fatal-infos
+          echo "Code analysis complete"
+      
+      - name: Build APK
+        run: |
+          echo " Building."
+          flutter build apk --release
+          echo "APK built successfully!"
+          ls -lh build/app/outputs/flutter-apk/
+
+      - name: Upload APK as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+      
