@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128465685185",
+    "project_id": "wheather-app-f6811",
+    "storage_bucket": "wheather-app-f6811.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128465685185:android:767ce51a8737595a5aa240",
+        "android_client_info": {
+          "package_name": "com.example.weather"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBif120P2K3ogrTBMDtWfoFkiyh8UNBRu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
